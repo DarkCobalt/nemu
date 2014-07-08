@@ -116,4 +116,4 @@ REST_FRAMEWORK = {
 }
 
 REST_REGISTRATION_BACKEND = 'rest_auth.backends.rest_registration.RESTRegistrationView'
-REST_PROFILE_MODULE = 'accounts.UserProfile'
+REST_PROFILE_MODULE = 'api.UserProfile'
