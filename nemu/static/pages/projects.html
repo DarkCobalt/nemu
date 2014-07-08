@@ -1,0 +1,103 @@
+<div class="modal fade" id="NewManga" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel">Dodaj Mange</h4>
+          </div>
+          <form action="/mangalist/add/" method="post" role="form">
+
+              <div class="modal-body">
+                <div class="form-group">
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Anuluj</button>
+                <button type="submit" class="btn btn-primary">Zapisz</button>
+              </div>
+
+           </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dialog Status mangi -->
+    <div class="modal fade" id="Status" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel">Zmień status Mangi</h4>
+          </div>
+          <div class="modal-body">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dialog Dodanie mangi -->
+    <div class="modal fade" id="DeleteManga" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel">Usuń Mangę</h4>
+          </div>
+          <div class="modal-body">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Projekty</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-table fa-fw"></i> Mangi
+                    <div class="pull-right">
+                         <div class="btn-group">
+                            <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">Akcja <span class="caret"></span> </button>
+                            <ul class="dropdown-menu pull-right" role="menu">
+                                <li><a href="#"  data-toggle="modal" data-target="#NewManga">Dodaj</a></li>
+                                <li><a href="#"  data-toggle="modal" data-target="#Status">Status</a></li>
+                                <li><a href="#"  data-toggle="modal" data-target="#DeleteManga">Usuń</a></li>
+                            </ul>
+                        </div>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">Filtr <span class="caret"></span> </button>
+                            <ul class="dropdown-menu pull-right" role="menu">
+                                <li class="active filtr-z"><a href="#" ng-click="Jakie = {moje: 1}">Moje projekty</a></li>
+                                <li class="filtr-z"><a href="#" ng-click="Jakie = null">Wszystkie projekty</a></li>
+                                <li class="divider"></li>
+                                <li class="filtr-x active"><a href="#" ng-click="Status = null">Wszystkie</a></li>
+                                <li class="filtr-x"><a href="#" ng-click="Status = {status:'aktywny'}">Aktywne</a></li>
+                                <li class="filtr-x"><a href="#" ng-click="Status = {status:'zawieszony'}">Zawieszone</a></li>
+                                <li class="filtr-x"><a href="#" ng-click="Status = {status:'zakonczony'}">Zakończone</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body">
+                     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 box"  ng-repeat="manga in projects">
+                        <img ng-src="/static/images/okladka/{{ manga.project[0].id }}.jpg" class="img-responsive"/>
+                        <p>{{ manga.project[0].title }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
