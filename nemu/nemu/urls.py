@@ -11,6 +11,6 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^api/', include('api.urls'), name='api'),
     url(r'^$', views.OnePageAppView.as_view(), name='home'),
-    url(r'^rest-auth/', include('rest_auth.urls')),
+    (r'^rest-auth/', include('rest_auth.urls')),
 
 )

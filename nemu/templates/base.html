@@ -1,5 +1,4 @@
 {% load staticfiles %}
-{% load djangular_tags %}
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -29,7 +28,7 @@
     </script>
     <script type="text/javascript">
         mangalist.config(function($httpProvider) {
-            $httpProvider.defaults.headers.common['X-CSRFToken'] = '{% csrf_value %}';
+            $httpProvider.defaults.headers.common['X-CSRFToken'] = '{% csrf_token %}';
     });
     </script>
 
