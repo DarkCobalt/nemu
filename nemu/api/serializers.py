@@ -3,6 +3,21 @@ from rest_framework import serializers
 from models import UserProfile, User, Project, ScanlationGroupProjects, Chapter
 
 
+class UserProfileSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = UserProfile
+        fields = ('gg', 'skype', 'opis', 'group_id',)
+
+
+class UserSerializer(serializers.ModelSerializer):
+    profile = UserProfileSerializer(required=False, many=False)
+
+    class Meta:
+        model = User
+        fields = ('id', 'username', 'email', 'profile')
+
+
 class ChapterSerializer(serializers.ModelSerializer):
     class Meta:
         model = Chapter
