@@ -77,7 +77,7 @@ class Role(models.Model):
 
 class Assigned(models.Model):
     user_id = models.ManyToManyField(User, null=True)
-    project_id = models.ForeignKey(Project)
+    project_id = models.ForeignKey(Project, to_field='title')
     chapter_id = models.ForeignKey(Chapter)
 
     def display_user(self):
