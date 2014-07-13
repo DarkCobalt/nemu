@@ -4,7 +4,7 @@
             <div id="login_view">
                 <div ng-if="complete == false">
                      <!--ng-if="authenticated == false"-->
-                    <form role="form" ng-submit="login(loginForm)" name="loginForm" novalidate >
+                    <form role="form" ng-submit="login(loginForm)" name="loginForm" ng-if="authenticated == false"  novalidate >
                       <div class="form-group">
                         <label for="id_username">Username</label>
                         <input name="username" id="id_username" type="text" ng-model="model.username" placeholder="Username" class="form-control" required />

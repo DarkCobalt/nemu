@@ -295,8 +295,8 @@ app.controller('LoginCtrl', function ($scope, djangoAuth, Validate) {
         djangoAuth.login($scope.model.username, $scope.model.password)
         .then(function(data){
         	$scope.complete = true;
-           // window.location = '/';
-          $scope.setAuth(true);
+            window.location = '/';
+            $scope.setAuth(true);
         },function(data){
         	// error case
         	$scope.error = data.error;
