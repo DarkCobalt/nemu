@@ -1,0 +1,42 @@
+ <div id="wrapper">
+    <div id="page-wrapper">
+        <div ng-include="'/static/pages/nav.html'"></div>
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Profil</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <i class="fa fa-table fa-fw"></i> Dane Użytkownika
+                        <div class="pull-right">
+                             <div class="btn-group">
+                                <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">Akcja <span class="caret"></span> </button>
+                                <ul class="dropdown-menu pull-right" role="menu">
+                                    <li><a href="#"  data-toggle="modal" data-target="#NewManga">Edytuj</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                            <img ng-src="/static/images/profiles/{{ user[0].id }}.jpg" class="img-responsive"/>
+                        </div>
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                            <p>Nick: {{ user[0].username }}</p>
+                            <p>Grupa: {{ user[0].profile.group_id }}</p>
+                            <p>Email: {{ user[0].email }}</p>
+                            <p>GG: {{ user[0].profile.gg }}</p>
+                            <p>Skype: {{ user[0].profile.skype }}</p>
+                            <p>Opis: {{ user[0].profile.opis }}</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>
